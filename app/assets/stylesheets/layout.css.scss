@@ -51,7 +51,7 @@ header, footer {
 
 img {
   &.illustration {
-    border: 1px solid black; }
+    border: 2px solid black; }
   &.left {
     float: left;
     margin: 5px 10px 0 0; }
@@ -181,7 +181,7 @@ section#page {
   #body_content {
     min-height: 600px;
     img {
-      border: 1px solid #333; } }
+      border: 2px solid #333; } }
   #body_content_left, #body {
     width: 660px;
     float: left;
@@ -218,6 +218,11 @@ section#page {
   float: right;
   background-color: #57687C;
   margin-bottom: 1em;
+
+  $radius: 10px;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
 
   > a.parent {
     display: block;
