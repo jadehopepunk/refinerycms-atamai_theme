@@ -3,12 +3,19 @@ iframe.map {
  margin: 1em auto;
 }
 
+$base-font-size: 18px;
+$rythm: $base-font-size * 1.5;
+$line-height: 1.5em;    
+$h1-height: 2.369em;
+$h2-height: 1.777em;
+
 body {
   margin: 0;
   padding: 0;
   background-color: #323C48;
   font-family: Helvetica, Arial, sans-serif;
-  line-height: 140%;
+  font-size: $base-font-size;
+  line-height: $line-height;
   font-weight: normal; }
 
 a {
@@ -21,7 +28,9 @@ a {
 h1 {
   letter-spacing: 1px;
   color: #57687C;
-  margin-bottom: 1em;
+  line-height: 0.63318em;
+  margin: $rythm 0 0.63318em 0;
+  font-size: $h1-height;
     a {
     color: black;
     text-decoration: none;
@@ -31,13 +40,27 @@ h1 {
       text-decoration: none;
       font-size: 170%; } } }
 
+$h2-line-height: 0.84411930219471em;
+
 h2 {
-  color: #57687C; }
+  font-size: $h2-height;
+  color: #57687C;
+  line-height: $h2-line-height;
+  margin: 0;
+  margin-bottom: $h2-line-height;
+}
+
+ul {
+  margin: $rythm 0 $rythm 0;
+}
 
 h1#body_content_title {
-  margin: 0 0 0;
-  font-size: 150%;
   color: #001334 }
+
+p {
+  margin: 0;
+  margin-bottom: $line-height;
+}
 
 .fixed {
   width: 1000px;
@@ -208,16 +231,13 @@ section#page {
     clear: right;
     h2 {
       color: #555;
-      font-size: 140%;
-      margin-top: 0;
-      line-height: 120%;
     } } }
 
 #submenu_container {
   width: 280px;
   float: right;
   background-color: #57687C;
-  margin-bottom: 1em;
+  margin-bottom: $rythm;
 
   $radius: 10px;
   -webkit-border-radius: $radius;
@@ -226,14 +246,20 @@ section#page {
 
   > a.parent {
     display: block;
-    padding: 10px;
+    margin: ($rythm / 2) 0;
+    padding: ($rythm / 2) 10px;
     color: white;
     background: #001334;
     text-decoration: none;
+    line-height: $rythm;
+  }
+
+  #submenu > ul > li {
+    margin-bottom: $rythm;
   }
 
   ul {
-    margin: 10px;
+    margin: 0 10px 0 10px;
     color: white;
     padding: 0;
 
@@ -245,7 +271,7 @@ section#page {
     > li {
       display: block;
       list-style: none outside none;
-      margin: 0 9px 5px 0;
+      margin: 0;
       padding: 0;
 
       a {
